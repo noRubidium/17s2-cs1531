@@ -42,7 +42,9 @@ Write a set of user stories with acceptance criteria for a training centre, wher
   ... <p>
   ID   | US1 <p>
   NAME | Search for all offerings <p>
-  Description: <p>
+  Description:
+
+  
   | Table     | content |
   | --------- |:-------:|
   | As a      | ....... |
