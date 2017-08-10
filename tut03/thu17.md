@@ -40,11 +40,16 @@ Write a set of user stories with acceptance criteria for a training centre, wher
 # assignment format
   Epic story <p>
   ... <p>
-  ID   | US1 <p>
-  NAME | Search for all offerings <p>
+
+
+  | ID   | US1                      |
+  | ---- | ------------------------ |
+  | NAME | Search for all offerings |
+
+
   Description:
 
-  
+
   | Table     | content |
   | --------- |:-------:|
   | As a      | ....... |
