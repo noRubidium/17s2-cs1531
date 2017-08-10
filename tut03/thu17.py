@@ -10,8 +10,9 @@ def main():
     s = 'Hello this is Jack'
     print(is_unique(s))
 
-# d =  {'Ben': ['COMP1511', 'COMP1531'], 'Anna': ['COMP1521']}
-# d['Ben']
+d =  {'Ben': ['COMP1511', 'COMP1531'], 'Anna': ['COMP1521']}
+d['Ben']
+d.get('Jack', [])
 
 def is_unique(s):
     words = s.split(' ')
