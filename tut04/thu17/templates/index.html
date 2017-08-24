@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <form method="POST">
+      name: <input name="name">
+      zID: <input name="zID">
+      description: <input name="desc">
+      <button type="submit" name="button">Say hi!</button>
+    </form>
+    <a href="{{url_for('hello_all')}}">check all users</a>
+  </body>
+</html>

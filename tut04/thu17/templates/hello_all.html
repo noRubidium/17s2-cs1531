@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if all_users %}
+      {% for user in all_users %}
+        <h1>HI, {{user[0]}} (ZID:{{user[1]}}, The person {{user[2]}})</h1>
+      {% endfor %}
+    {% else %}
+      Please add some users
+    {% endif %}
+  </body>
+</html>
