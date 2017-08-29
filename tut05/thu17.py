@@ -2,16 +2,16 @@ class ConferenceCenter(object):
     """docstring for ConferenceCenter."""
     def __init__(self):
         super(ConferenceCenter, self).__init__()
-        self._courses = set()
+        self.__courses = set()
 
     def add_course(self, course):
-        self._courses.add(course)
+        self.__courses.add(course)
 
     def delete_course(self, course):
-        self._courses.remove(course)
+        self.__courses.remove(course)
 
     def __str__(self):
-        courses = list(map(str, self._courses))
+        courses = list(map(str, self.__courses))
         return '\n\n'.join(courses)
 
 
@@ -21,18 +21,18 @@ class People(object):
     def __init__(self, name, address, phone):
         super(People, self).__init__()
 
-        self._name = name
-        self._address = address
-        self._phone = phone
+        self.__name = name
+        self.__address = address
+        self.__phone = phone
 
     def change_address(self, addr):
-        self._address = addr
+        self.__address = addr
 
     def change_phone(self, phone):
-        self._phone = phone
+        self.__phone = phone
 
     def __str__(self):
-        return '%s #%d: %s' % (self.__class__.__name__, self._id, self._name)
+        return '%s #%d: %s' % (self.__class__.__name__, self.__id, self.__name)
 
 
 class Attendee(People):
@@ -40,7 +40,7 @@ class Attendee(People):
     student_id = 0
     def __init__(self, name, address, phone):
         super(Attendee, self).__init__(name, address, phone)
-        self._id = Attendee.student_id
+        self.__id = Attendee.student_id
         Attendee.student_id += 1
 
 
@@ -49,12 +49,12 @@ class Trainer(People):
     staff_id = 0
     def __init__(self, name, address, phone, field):
         super(Trainer, self).__init__(name, address, phone)
-        self._id = Trainer.staff_id
-        self._field = field
+        self.__id = Trainer.staff_id
+        self.__field = field
         Trainer.staff_id += 1
 
     def change_field(self, field):
-        self._field = field
+        self.__field = field
 # course = Course(....)
 # course.add(2) -> Course.add(course, 2)
 
@@ -63,34 +63,34 @@ class Course(object):
     """docstring for Course."""
     def __init__(self, title, abstract, date, venue, trainer):
         super(Course, self).__init__()
-        self._title = title
-        self._abstract = abstract
-        self._date = date
-        self._venue = venue
-        self._attendee = set()
-        self._trainer = trainer
+        self.__title = title
+        self.__abstract = abstract
+        self.__date = date
+        self.__venue = venue
+        self.__attendee = set()
+        self.__trainer = trainer
 
     def add_attendee(self, attendee):
-        self._attendee.add(attendee)
+        self.__attendee.add(attendee)
 
     def drop_attendee(self, attendee):
-        self._attendee.remove(attendee)
+        self.__attendee.remove(attendee)
 
     def change_trainer(self, trainer):
-        self._trainer = trainer
+        self.__trainer = trainer
 
     def __str__(self):
         s = list(map(str, self._attendee))
-        return 'NAME: %s\n Trainer: %s\n Attendees: %s' % (self._title, str(self._trainer), ', '.join(s))
+        return 'NAME: %s\n Trainer: %s\n Attendees: %s' % (self.__title, str(self.__trainer), ', '.join(s))
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
-            if self._title == other._title:
+            if self.__title == other.__title:
                 return True
         return False
 
     def __hash__(self):
-        return self._title.__hash__()
+        return self.__title.__hash__()
     # def add(self, num):
     #     self.num += num
 
