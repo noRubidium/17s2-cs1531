@@ -1,4 +1,4 @@
-from abc import abstractmethod
+from abc import abstractmethod, ABCMeta
 # property
 # say one of the method can be used as a property
 class ConferenceCenter(object):
@@ -17,7 +17,7 @@ class ConferenceCenter(object):
         return '\n\n'.join(list(map(str, self.__courses)))
 
 
-class Person(object):
+class Person(metaclass=ABCMeta):
     """docstring for Person."""
     def __init__(self, name, address, phone, credit_card, id):
         super(Person, self).__init__()
