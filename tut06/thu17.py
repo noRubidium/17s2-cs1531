@@ -1,4 +1,4 @@
-from abc import abstractmethod
+from abc import abstractmethod, ABCMeta
 class ConferenceCenter(object):
     """docstring for ConferenceCenter."""
     def __init__(self):
@@ -47,7 +47,7 @@ class CreditCard(object):
         return self.balance / get_conversion(currency)
 
 
-class People(object):
+class People(metaclass=ABCMeta):
     """docstring for People."""
     student_id = 0
     def __init__(self, name, address, phone, id):
