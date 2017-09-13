@@ -16,7 +16,6 @@ class ConferenceCenter(object):
     def __str__(self):
         return '\n\n'.join(list(map(str, self.__courses)))
 
-
 class Person(metaclass=ABCMeta):
     """docstring for Person."""
     def __init__(self, name, address, phone, credit_card, id):
