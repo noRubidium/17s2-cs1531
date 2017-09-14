@@ -14,3 +14,24 @@ class Graphic:
         elif isinstance(shape, Circle):
             shape.radius *= ratio
         else: print("shape not defined")
+
+class Shape(ABCMeta):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def scale(self, ratio):
+        pass
+
+class Circle(Shape):
+    """docstring for Circle."""
+    def __init__(self, arg):
+        super(Circle, self).__init__()
+        self.arg = arg
+
+    def area(self):
+        return 3.14 * self._radius ** 2
+
+    def scale (self, ratio):
+        self._radius *= ratio
